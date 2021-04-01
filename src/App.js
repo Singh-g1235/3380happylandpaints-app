@@ -3,7 +3,7 @@ import './App.css';
 import FormContainer from './Components/FormContainer/FormContainer';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import HomePage from './Components/HomePage/HomePage';
-import SignInForm from './Components/SignInForm/SignInForm';
+//import SignInForm from './Components/SignInForm/SignInForm';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={FormContainer}></Route>
           <Route path="/home_page" exact component={HomePage}></Route>
-          <Route path="/signup" exact component={SignInForm}></Route>
+          {/* <Route path="/signup" exact component={SignInForm}></Route> */}
         </Switch>
       </Router>
     </div>
