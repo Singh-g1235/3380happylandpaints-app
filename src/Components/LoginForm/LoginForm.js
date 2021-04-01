@@ -44,7 +44,7 @@ function LoginForm(props) {
                 </form>
                 <div className="card-footer">
 				<div className="d-flex justify-content-center links">
-					Don't have an account?<Link to="/signup">Sign Up</Link>
+					Don't have an account?<button onClick={(e)=>{props.render("Signup")}}>Sign Up</button>
 				</div>
 				<div className="d-flex justify-content-center">
 					<a href="www.google.com">Forgot your password?</a>
