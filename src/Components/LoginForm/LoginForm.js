@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 import "./LoginFormCss.css"
 
 function LoginForm(props) {
@@ -44,7 +43,7 @@ function LoginForm(props) {
                 </form>
                 <div className="card-footer">
 				<div className="d-flex justify-content-center links">
-					Don't have an account?<button onClick={(e)=>{props.render("Signup")}}>Sign Up</button>
+					Don't have an account?<button className="btn text-primary" onClick={(e)=>{props.render("Signup")}}>Sign Up</button>
 				</div>
 				<div className="d-flex justify-content-center">
 					<a href="www.google.com">Forgot your password?</a>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getResponse } from "../../Services/loginService";
+import { addLoginUser, getResponse } from "../../Services/loginService";
 import { addSignupUser } from "../../Services/SignupService";
 import LoginForm from "../LoginForm/LoginForm";
 import { useHistory } from "react-router-dom";
@@ -18,10 +18,21 @@ function FormContainer() {
     });
   }
 
-  async function signup() {
+  async function signup(e) {
+    e.preventDefault();
    // console.log(newUser);
    setIsLoading(true);
      const res=await addSignupUser(newUser);
+
+     const resp=await addLoginUser({UserId:newUser.UserId,Password:newUser.Password});
+
+     if (resp) {
+      console.log("success");
+      history.push("/home_page");
+    } else {
+      setIsLoading(false);
+    }
+
      if (res) {
       console.log("success");
       history.push("/home_page");

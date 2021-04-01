@@ -5,7 +5,7 @@ function SignupForm(props) {
     <div className="container bg-dark">
       <div className="form-group bg-dark">
         <h2 className="text-warning">Create Your Profile</h2>
-        <form className="text-warning">
+        <form className="text-warning" onSubmit={props.submit}>
           <div className="form-row">
             <div className="col-md-4 mb-3"></div>
           </div>
@@ -131,7 +131,7 @@ function SignupForm(props) {
             </div>
           </div>
 
-          <button className="btn btn-warning" onClick={props.submit}>SignUp</button>
+          <button className="btn btn-warning"  type="submit">SignUp</button>
         </form>
      
           <img  alt="img not avialable" src="https://mir-s3-cdn-cf.behance.net/projects/404/ae3afc101182005.Y3JvcCw5NjAsNzUwLDAsMTA0.png" />
