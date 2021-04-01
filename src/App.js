@@ -7,6 +7,7 @@ import HomePage from './Components/HomePage/HomePage';
 function App() {
   return (
     <div className="App">
+
       <Router>
         <Switch>
           <Route path="/" exact component={FormContainer}></Route>

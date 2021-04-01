@@ -17,7 +17,7 @@ function SignupForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="FirstName"
+                name="FirstName"
                 placeholder="First name"
                 onChange={props.update}
                 required
@@ -30,7 +30,7 @@ function SignupForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="LastName"
+                name="LastName"
                 placeholder="Last name"
                 onChange={props.update}
                 required
@@ -45,7 +45,7 @@ function SignupForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="Password"
+                name="Password"
                 placeholder="Password"
                 onChange={props.update}
                 required
@@ -58,14 +58,14 @@ function SignupForm(props) {
             <div className="col-md-4 mb-3">
               <div className="input-group">
                 <div className="input-group-prepend">
-                  <span className="input-group-text" id="U">
+                  <span className="input-group-text" name="U">
                     @
                   </span>
                 </div>
                 <input
                   type="text"
                   className="form-control"
-                  id="UserId"
+                  name="UserId"
                   placeholder="UserId/Email"
                   aria-describedby="inputGroupPrepend2"
                   required
@@ -82,7 +82,7 @@ function SignupForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="Unit"
+                name="Unit"
                 placeholder="Unit No"
                 required
                 onChange={props.update}
@@ -95,7 +95,7 @@ function SignupForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="City"
+                name="City"
                 placeholder="City"
                 required
                 onChange={props.update}
@@ -110,7 +110,7 @@ function SignupForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="Province"
+                name="Province"
                 placeholder="Province"
                 required
                 onChange={props.update}
@@ -123,7 +123,7 @@ function SignupForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="Zip"
+                name="Zip"
                 placeholder="Zip"
                 required
                 onChange={props.update}
