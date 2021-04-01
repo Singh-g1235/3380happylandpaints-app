@@ -14,7 +14,7 @@ function FormContainer() {
   function updateUser(e) {
     setNewUser({
       ...newUser,
-      [e.target.id]: e.target.value,
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -24,7 +24,7 @@ function FormContainer() {
    setIsLoading(true);
      const res=await addSignupUser(newUser);
 
-     const resp=await addLoginUser({UserId:newUser.UserId,Password:newUser.Password});
+     const resp=await addLoginUser({UserId:newUser.UserId,Password:newUser.Password,Role:"customer"});
 
      if (resp) {
       console.log("success");
