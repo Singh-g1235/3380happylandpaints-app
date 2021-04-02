@@ -22,25 +22,18 @@ function FormContainer() {
     e.preventDefault();
    // console.log(newUser);
    setIsLoading(true);
-     const res=await addSignupUser(newUser);
+     const resp=await addSignupUser(newUser);
 
-     const resp=await addLoginUser({UserId:newUser.UserId,Password:newUser.Password,Role:"customer"});
+     const res=await addLoginUser({UserId:newUser.UserId,Password:newUser.Password,Role:"customer"});
 
-     if (resp) {
-      console.log("success");
+     //if the user is inserted correctly in the collections
+     if (res.auth && resp) {
+      console.log("success user token is"+res.token);
       history.push("/home_page");
     } else {
       setIsLoading(false);
     }
 
-     if (res) {
-      console.log("success");
-      history.push("/home_page");
-    } else {
-      setIsLoading(false);
-    }
-
-   // console.log(res);
   }
 
   const action=(res)=>{
@@ -52,12 +45,15 @@ function FormContainer() {
   }
 
   async function submit(e) {
+    //when user clicks login button
     setIsLoading(true);
     //console.log(newUser);
     const resp = await getResponse(newUser);
 
-    if (resp) {
+    //check if we passed the authenitcation of data with our database.
+    if (resp.auth) {
       console.log("success");
+      console.log(resp.token);
       if(newUser.Role ==="customer")
       {
         history.push("/home_page");

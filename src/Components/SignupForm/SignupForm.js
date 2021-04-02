@@ -43,7 +43,7 @@ function SignupForm(props) {
             </div>
             <div className="col-md-4 mb-3">
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 name="Password"
                 placeholder="Password"
