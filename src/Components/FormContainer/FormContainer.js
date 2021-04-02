@@ -58,7 +58,14 @@ function FormContainer() {
 
     if (resp) {
       console.log("success");
-      history.push("/home_page");
+      if(newUser.Role ==="customer")
+      {
+        history.push("/home_page");
+      }
+      else{
+        history.push("/admin_page");
+
+      }
     } else {
       setIsLoading(false);
     }
