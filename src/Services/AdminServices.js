@@ -138,3 +138,18 @@ export async function updateOrderService(orderId) {
 
 //Services for order end
 
+//Services vendor begin
+export async function approveSupplyService(product) {
+    //update product in database
+
+    let updatedProduct = product;
+    const newProduct = JSON.stringify(updatedProduct);
+    return fetch(`${process.env.REACT_APP_API_BASE_URL}admin/vendor/`,{
+        method: 'PUT',
+        headers: {"Content-Type":"application/json"},
+        body: newProduct
+    })
+    .then(response => response.json())
+}
+//Services Vendor end
+

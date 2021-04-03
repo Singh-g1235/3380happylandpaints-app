@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import * as XLSX from "xlsx";
 import Vendor from '../Vendor/Vendor'
-import {updateProductService} from '../../../../Services/AdminServices'
+import {approveSupplyService} from '../../../../Services/AdminServices'
 function VendorList(props) {
 
     const [vendorList,setVendorList] = useState([]);
@@ -28,7 +28,7 @@ function VendorList(props) {
             "ProductImage":"",
             "ProductType":productToUpdate[0].ProductType
         }
-        await updateProductService(newProduct);
+        await approveSupplyService(newProduct);
         setVendorList(newList);
 
     }
