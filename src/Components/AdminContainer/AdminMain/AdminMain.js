@@ -4,6 +4,7 @@ import OrderList from '../OrderComponent/OrderList/OrderList'
 import UserList from '../UserComponent/UserList/UserList'
 import AdminNavbar from '../AdminNavbar/AdminNavbar'
 
+
 function AdminMain(props) {
     // it is the container of all the admin module and links to admin Navbar,Product Operations, Order Operations and User Operations
     const [product,setProduct] = useState(true);
@@ -28,19 +29,19 @@ function AdminMain(props) {
         }
     }
 
-    if (order) return (<div className="container">
+    if (order) return (<div className="container col-md-12">
             <AdminNavbar toggleNav={toggleNav} />
             <br/><br/>
         <OrderList />
     </div>)
 
-    if (user) return (<div className="container">
+    if (user) return (<div className="container col-md-12">
      
         <AdminNavbar toggleNav={toggleNav} />
             <br/><br/>
         <UserList />
     </div>)
-    if (product) return (<div className="container ">
+    if (product) return (<div className="container col-md-12">
            <AdminNavbar toggleNav={toggleNav} />
             <br/><br/>
            <ProductList />

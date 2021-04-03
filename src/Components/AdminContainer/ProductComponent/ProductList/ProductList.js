@@ -6,12 +6,13 @@ import SearchBar from '../SearchBar/SearchBar'
 import {getProductsService,getProductByIdService,addProductService,updateProductService,deleteProductService} from '../../../../Services/AdminServices'
 
 function ProductList(props) {
+    // It contains everything related to Admin Product Operations such as view products in inventory, add, remove and update product
     const [productList,setProductList] = useState([]);
     const [error,setError] = useState(false);
     const [loading,setLoading] = useState(true);
     const [action, setAction] = useState("add");
     const [newProduct, setNewProduct] = useState();
-    const [keyword,setKeyword] = useState();
+    const [keyword,setKeyword] = useState("");
 
     useEffect(()=>{
         refreshProducts();
