@@ -3,6 +3,7 @@ import ProductList from '../ProductComponent/ProductList/ProductList'
 import OrderList from '../OrderComponent/OrderList/OrderList'
 import UserList from '../UserComponent/UserList/UserList'
 import AdminNavbar from '../AdminNavbar/AdminNavbar'
+import VendorList from '../VendorComponent/VendorList/VendorList'
 
 
 function AdminMain(props) {
@@ -10,6 +11,7 @@ function AdminMain(props) {
     const [product,setProduct] = useState(true);
     const [user,setUser] = useState(false);
     const [order,setOrder] = useState(false);
+    const [vendor,setVendor] = useState(false);
     
     useEffect(()=>{})
 
@@ -18,14 +20,23 @@ function AdminMain(props) {
             setProduct(true);
             setOrder(false);
             setUser(false);
+            setVendor(false);
         } else if (e.target.value === "order"){
             setProduct(false);
             setOrder(true);
             setUser(false);
+            setVendor(false);
         }  else if (e.target.value === "user"){
             setProduct(false);
             setOrder(false);
             setUser(true);
+            setVendor(false);
+        }
+        else if (e.target.value === "vendor"){
+            setProduct(false);
+            setOrder(false);
+            setUser(false);
+            setVendor(true);
         }
     }
 
@@ -46,6 +57,11 @@ function AdminMain(props) {
             <br/><br/>
            <ProductList />
         </div>)
+     if (vendor) return (<div className="container col-md-12">
+     <AdminNavbar toggleNav={toggleNav} />
+      <br/><br/>
+     <VendorList />
+  </div>)
     return (
         <div className="alert alert-info">
             Welcome Admin... Please hold on for a while
