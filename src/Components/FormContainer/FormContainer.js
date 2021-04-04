@@ -29,6 +29,7 @@ function FormContainer() {
      //if the user is inserted correctly in the collections
      if (res.auth && resp) {
       console.log("success user token is"+res.token);
+      localStorage.setItem('token', res.token);
       history.push("/home_page");
     } else {
       setIsLoading(false);
@@ -54,6 +55,7 @@ function FormContainer() {
     if (resp.auth) {
       console.log("success");
       console.log(resp.token);
+      localStorage.setItem('token', resp.token);
       if(newUser.Role ==="customer")
       {
         history.push("/home_page");
