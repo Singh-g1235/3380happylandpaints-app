@@ -18,6 +18,7 @@ function FormContainer() {
     });
   }
 
+  //when user click signup
   async function signup(e) {
     e.preventDefault();
    // console.log(newUser);
@@ -30,6 +31,7 @@ function FormContainer() {
      if (res.auth && resp) {
       console.log("success user token is"+res.token);
       localStorage.setItem('token', res.token);
+      localStorage.setItem('sessionId',newUser.UserId);
       history.push("/home_page");
     } else {
       setIsLoading(false);
@@ -56,6 +58,8 @@ function FormContainer() {
       console.log("success");
       console.log(resp.token);
       localStorage.setItem('token', resp.token);
+      localStorage.setItem('sessionId',newUser.UserId);
+
       if(newUser.Role ==="customer")
       {
         history.push("/home_page");

@@ -7,23 +7,27 @@ export default function withAuth(ComponentInside) {
             super();
             this.state={
                 loading:true,
-                redirect:false
+                redirect:false,
+                id:""
             };
         }
 
         //Call the authorization
         componentDidMount() {
-            fetch(`${process.env.REACT_APP_API_BASE_URL}`+'login/auth', {
+            fetch(`${process.env.REACT_APP_API_BASE_URL}login/auth`, {
                 method:"GET",
                 credentials: "include",
                 headers: { 'x-access-token' : localStorage.getItem('token')}
             })
             .then( res => { 
+               // const test = res.json();
+                //console.log(localStorage.getItem('sessionId'));
+                this.setState({id:localStorage.getItem('sessionId')})
                 if (res.status === 200) {
-                    console.log("here is response");
                     this.setState({ loading: false });
                 } else {
                     const error = new Error(res.error);
+                    alert("Please login to edit the profile");
                     throw error;
                 }
             })
@@ -43,7 +47,7 @@ export default function withAuth(ComponentInside) {
             } if (redirect) {
                 return <Redirect to ="/"/>
             }
-            return <ComponentInside { ...this.props } />
+            return <ComponentInside id={this.state.id} />
         }
     }
 }

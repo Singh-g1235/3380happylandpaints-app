@@ -6,17 +6,17 @@ import HomePage from './Components/HomePage/HomePage';
 import AdminMain from './Components/AdminContainer/AdminMain/AdminMain'
 import withAuth from './Services/withAuth';
 import EditProfile from './Components/EditProfile/EditProfile';
-//import SignInForm from './Components/SignInForm/SignInForm';
+import UserOrdersContainer from './Components/UserOrdersContainer/UserOrdersContainer';
 
-
-//import SignInForm from './Components/SignInForm/SignInForm';
 function App() {
   return (
     <div className="App">
 
       <Router>
         <Switch>
+          {/* edit_profile and edit_orders will require user authentication. */}
         <Route path="/edit_profile" exact component={withAuth(EditProfile)}></Route>
+        <Route path="/edit_orders" exact component={withAuth(UserOrdersContainer)}></Route>
 
           <Route path="/" exact component={FormContainer}></Route>
           <Route path="/home_page" exact component={HomePage}></Route>
