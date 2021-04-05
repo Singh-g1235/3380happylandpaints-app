@@ -1,0 +1,9 @@
+POST http://localhost:8000/home_page
+Content-Type: application/json
+
+{
+            "ProductId": "hp01",
+            "ProductName": "paint",
+            "ProductQuantity": "44",
+            "ProductAmount": "45"
+        }
