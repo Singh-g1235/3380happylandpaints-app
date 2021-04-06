@@ -25,10 +25,12 @@ function ProductRecord(props) {
                              MPI rating is <strong> {props.productDescription.mpiRating}</strong> and VOC level is <strong>{props.productDescription.vocLevel}</strong>.  </p>
                             <h3>Price : ${props.productAmount}</h3>
                         </div>
-                        <div class="col-4">
+                        <div class="col-2">
 
-                            <button type="button" class="btn btn-primary" onClick={props.addToCart} value={props.productId}>Add to Cart</button>
-                            <button type="button" class="btn btn-primary"onClick={props.viewCart} >View Cart</button>
+                            <button type="button" class="btn btn-warning" onClick={props.addToCart} value={props.productId}>Add to Cart</button>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-warning" onClick={props.viewCart} >View Cart</button>
                         </div>
                     </div>
 

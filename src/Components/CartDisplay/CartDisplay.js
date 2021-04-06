@@ -32,8 +32,7 @@ function CartDisplay(props) {
                         {
                             props.cart.map((item, i) => (
 
-                                // <CartRecord key={i} ProductId={ele.ProductId} productName={ele.ProductName} productQuantity={ele.ProductQuantity} 
-                                // ProductAmount={ele.ProductAmount} deleteProduct={(e)=>{ele.deleteProduct(ele.ProductId)}} />
+
                                 <tr className="align-middle">
                                     <td>{item.ProductName}</td>
                                     <td>{item.ProductQuantity}</td>
@@ -48,9 +47,9 @@ function CartDisplay(props) {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <button type="button" className="btn btn-primary fs-4 mt-4" onClick={props.checkout}>Checkout</button>
+                            <button type="button" className="btn btn-warning fs-4 mt-4" onClick={props.checkout}>Checkout</button>
                         </div>
-                        <div className="col col-lg-2">
+                        <div className="col col-lg-5">
                             <label className="display-6 align-middle text-end mt-4 ms-4">
                                 ${props.cart.map(ele => ele.ProductAmount).reduce((total, price) => (total + price), 0)}</label>
                         </div>
