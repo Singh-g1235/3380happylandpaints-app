@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 import Navbar from '../Navbar/Navbar';
 import { useHistory } from "react-router-dom";
 import ProductTable from '../ProductTable/ProductTable';
-import {addProductToCart, deleteProductFromCart, getProductByIdService, getProductsService,getCart} from '../../Services/cartService'
+import {addProductToCart, getProductByIdService, getProductsService,getCart} from '../../Services/cartService'
 
 
 function HomePage() {

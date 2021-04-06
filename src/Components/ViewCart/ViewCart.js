@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import CartDisplay from '../CartDisplay/CartDisplay';
-import {getCart, deleteProductService,cartCheckout} from '../../Services/cartService'
+import {getCart, deleteProductService,cartCheckout,addProductToOrders} from '../../Services/cartService'
 
 
 function ViewCart(props) {
@@ -32,6 +32,7 @@ function ViewCart(props) {
 
     async function deleteProduct(e) {
        
+        
         await deleteProductService(e);
         console.log("in delete")
         refreshPage();
@@ -40,7 +41,7 @@ function ViewCart(props) {
     //checkout
 
     async function checkout(e) {
-       
+        await addProductToOrders(cart);
         await cartCheckout(e);
         console.log("in checkout")
         refreshPage();

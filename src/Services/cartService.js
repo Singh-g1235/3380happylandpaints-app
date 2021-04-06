@@ -70,3 +70,17 @@ export async function cartCheckout() {
 }
 
 
+export async function addProductToOrders(product) {
+
+   
+    const newProduct = JSON.stringify(product);
+
+    console.log("in Json" + newProduct);
+    return fetch(`${process.env.REACT_APP_API_BASE_URL}cart/orders`,{
+        method: 'POST',
+        headers: {"Content-Type":"application/json"},
+        body: newProduct
+    })
+    .then(res =>res.json())
+}
+
