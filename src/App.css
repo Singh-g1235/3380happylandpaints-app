@@ -46,4 +46,10 @@
 #navbar-head{
   text-align: center;
 }
+#container{
+  margin-left: 150px;
+  margin-right: 90px;
+  padding-right:70px;
+  padding-bottom: 40px;
+}
 
