@@ -41,7 +41,7 @@ function ViewCart(props) {
     //checkout
 
     async function checkout(e) {
-        await addProductToOrders(cart);
+        await addProductToOrders({cart:cart,UserId:props.id});
         await cartCheckout(e);
         console.log("in checkout")
         refreshPage();

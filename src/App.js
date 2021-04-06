@@ -25,8 +25,8 @@ function App() {
         <Route path="/logout" exact component={withAuth(LogoutForm)}></Route>
 
           <Route path="/" exact component={FormContainer}></Route>
-          <Route path="/home_page" exact component={HomePage}></Route>
-          <Route path="/viewCart" exact component={ViewCart}></Route>
+          <Route path="/home_page" exact component={withAuth(HomePage)}></Route>
+          <Route path="/viewCart" exact component={withAuth(ViewCart)}></Route>
 
           {/* Route to admin module.. use url localhost:3000/admin_page to view admin module */}
           <Route path="/admin_page" exact component={AdminMain}></Route>
