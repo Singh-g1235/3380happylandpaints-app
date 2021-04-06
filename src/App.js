@@ -9,6 +9,7 @@ import EditProfile from './Components/EditProfile/EditProfile';
 import ViewCart from './Components/ViewCart/ViewCart'
 import UserOrdersContainer from './Components/UserOrdersContainer/UserOrdersContainer';
 import Navbar from './Components/Navbar/Navbar';
+import LogoutForm from './Components/LoginForm/LogoutForm';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           {/* edit_profile and edit_orders will require user authentication. */}
         <Route path="/edit_profile" exact component={withAuth(EditProfile)}></Route>
         <Route path="/edit_orders" exact component={withAuth(UserOrdersContainer)}></Route>
+        <Route path="/logout" exact component={withAuth(LogoutForm)}></Route>
 
           <Route path="/" exact component={FormContainer}></Route>
           <Route path="/home_page" exact component={HomePage}></Route>
