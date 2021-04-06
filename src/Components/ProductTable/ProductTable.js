@@ -6,7 +6,7 @@ function ProductTable(props) {
         
 
         <div class="accordion" id="accordionExample">
-              <h1><strong>The Right Paint and Stain for your Project</strong></h1>
+             
              
              
              {
