@@ -130,11 +130,15 @@ function SignupForm(props) {
             </div>
           </div>
 
-          <button className="btn btn-warning"  type="submit">SignUp</button>
+          <button className="btn btn-warning" type="submit">
+            SignUp
+          </button>
         </form>
-     
-          <img  alt="img not avialable" src="https://mir-s3-cdn-cf.behance.net/projects/404/ae3afc101182005.Y3JvcCw5NjAsNzUwLDAsMTA0.png" />
-     
+
+        <img
+          alt="img not avialable"
+          src="https://mir-s3-cdn-cf.behance.net/projects/404/ae3afc101182005.Y3JvcCw5NjAsNzUwLDAsMTA0.png"
+        />
       </div>
     </div>
   );

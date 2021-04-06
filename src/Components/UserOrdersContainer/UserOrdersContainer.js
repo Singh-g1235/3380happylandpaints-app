@@ -3,45 +3,37 @@ import { getOrders, deleteUserOrder } from "../../Services/editOrders";
 import UserOrders from "../UserOrders/UserOrders";
 
 function UserOrdersContainer(props) {
+  const [newOrder, setOrders] = useState([]);
 
-    const [newOrder, setOrders] = useState([]);
+  useEffect(() => {
+    refreshPage();
+  }, []);
 
-    useEffect(() => {
+  function refreshPage() {
+    getOrders(props.id).then((json) => {
+      setOrders(json);
+    });
+  }
 
-        refreshPage();
-         
-        }, []);
+  const cancelOrder = (item) => {
+    deleteOrder(item);
+  };
 
-        function refreshPage()
-        {
-            getOrders(props.id).then((json)=>{
+  async function deleteOrder(item) {
+    const resp = await deleteUserOrder({
+      UserId: item.UserId,
+      OrderId: item.OrderId,
+    });
 
-                console.log(json);
-                 setOrders(json);
-                
-            });
-        }
+    refreshPage();
+  }
 
-    const cancelOrder=(item)=>{
-
-        deleteOrder(item);
-
-    }
-
-    async function deleteOrder(item)
-    {
-        const resp=await deleteUserOrder({UserId:item.UserId,OrderId:item.OrderId});
-        console.log(resp);
-        console.log("deleted");
-        refreshPage();
-    }
-    
-    return (
-        <div>
-            <h1 className="text-success">Your Orders</h1>
-            <UserOrders items={newOrder} cancelOrder={cancelOrder}/>
-        </div>
-    )
+  return (
+    <div>
+      <h1 className="text-success">Your Orders</h1>
+      <UserOrders items={newOrder} cancelOrder={cancelOrder} />
+    </div>
+  );
 }
 
-export default UserOrdersContainer
+export default UserOrdersContainer;

@@ -1,9 +1,0 @@
-POST http://localhost:8000/cart
-Content-Type: application/json
-
-{
-            "ProductId": "hp01",
-            "ProductName": "paint",
-            "ProductQuantity": "44",
-            "ProductAmount": "45"
-        }

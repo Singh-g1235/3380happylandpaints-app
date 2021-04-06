@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getUser,updateSignupUser } from "../../Services/SignupService";
+import { getUser, updateSignupUser } from "../../Services/SignupService";
 
 import EditForm from "../EditForm/EditForm";
 
@@ -7,25 +7,17 @@ function EditProfile(props) {
   const [newUser, setNewUser] = useState();
   const [retrievedUser, setUser] = useState(null);
 
-
   useEffect(() => {
-
-  refreshPage();
-   
+    refreshPage();
   }, []);
 
-  function refreshPage()
-  {
+  function refreshPage() {
     getUser(props.id).then((json) => {
-
-        setUser(json[0]);
-        setNewUser(json[0]);
-        //console.log(json[0]);
-        
+      setUser(json[0]);
+      setNewUser(json[0]);
+      //console.log(json[0]);
     });
   }
-
-
 
   function updateUser(e) {
     setNewUser({
@@ -36,13 +28,12 @@ function EditProfile(props) {
 
   async function editProfile(e) {
     //prevent the default behaviour.
-      e.preventDefault();
+    e.preventDefault();
 
-      console.log(newUser);
-     const resp=await updateSignupUser(newUser);
-       
-     alert(resp.message);
-     
+    console.log(newUser);
+    const resp = await updateSignupUser(newUser);
+
+    alert(resp.message);
   }
 
   return retrievedUser ? (
