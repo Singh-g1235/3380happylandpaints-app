@@ -1,10 +1,12 @@
 import React from "react";
-import "./SignupFormCss.css";
-function SignupForm(props) {
+
+function EditForm(props) {
+
+  
   return (
     <div className="container bg-dark">
       <div className="form-group bg-dark">
-        <h2 className="text-warning">Create Your Profile</h2>
+        <h2 className="text-warning">Update Your Profile</h2>
         <form className="text-warning" onSubmit={props.submit}>
           <div className="form-row">
             <div className="col-md-4 mb-3"></div>
@@ -20,6 +22,7 @@ function SignupForm(props) {
                 name="FirstName"
                 placeholder="First name"
                 onChange={props.update}
+                defaultValue={props.currentUser.FirstName}
                 required
               ></input>
             </div>
@@ -33,6 +36,7 @@ function SignupForm(props) {
                 name="LastName"
                 placeholder="Last name"
                 onChange={props.update}
+                defaultValue={props.currentUser.LastName}
                 required
               ></input>
             </div>
@@ -48,6 +52,7 @@ function SignupForm(props) {
                 name="Password"
                 placeholder="Password"
                 onChange={props.update}
+                defaultValue={props.currentUser.Password}
                 required
               ></input>
             </div>
@@ -68,8 +73,9 @@ function SignupForm(props) {
                   name="UserId"
                   placeholder="UserId/Email"
                   aria-describedby="inputGroupPrepend2"
-                  required
+                  disabled={true}
                   onChange={props.update}
+                  defaultValue={props.currentUser.UserId}
                 ></input>
               </div>
             </div>
@@ -86,6 +92,7 @@ function SignupForm(props) {
                 placeholder="Unit No"
                 required
                 onChange={props.update}
+                defaultValue={props.currentUser.Unit}
               ></input>
             </div>
             <div className="col-md-2 mb-3">
@@ -99,6 +106,7 @@ function SignupForm(props) {
                 placeholder="City"
                 required
                 onChange={props.update}
+                defaultValue={props.currentUser.City}
               ></input>
             </div>
           </div>
@@ -114,6 +122,7 @@ function SignupForm(props) {
                 placeholder="Province"
                 required
                 onChange={props.update}
+                defaultValue={props.currentUser.Province}
               ></input>
             </div>
             <div className="col-md-2 mb-3">
@@ -127,13 +136,14 @@ function SignupForm(props) {
                 placeholder="Zip"
                 required
                 onChange={props.update}
+                defaultValue={props.currentUser.Zip}
               ></input>
             </div>
           </div>
 
-          <button className="btn btn-warning"  type="submit">SignUp</button>
+          <button className="btn btn-warning"  type="submit">UpdateProfile</button>
         </form>
-     
+
           <img  alt="img not avialable" src="https://mir-s3-cdn-cf.behance.net/projects/404/ae3afc101182005.Y3JvcCw5NjAsNzUwLDAsMTA0.png" />
      
       </div>
@@ -141,4 +151,4 @@ function SignupForm(props) {
   );
 }
 
-export default SignupForm;
+export default EditForm;

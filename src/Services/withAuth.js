@@ -27,7 +27,6 @@ export default function withAuth(ComponentInside) {
                     this.setState({ loading: false });
                 } else {
                     const error = new Error(res.error);
-                    alert("Please login to view this page");
                     alert("Please Login !! \n You are not an authorized user");
                     throw error;
                 }

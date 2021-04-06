@@ -38,8 +38,9 @@
 }
 
 #home_page{
-
+  margin-top: 100px;
   margin-left: 150px;
+  margin-right: 150px;
 }
 
 #navbar-head{

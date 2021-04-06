@@ -3,8 +3,8 @@ import "./LoginFormCss.css";
 
 function LoginForm(props) {
   return (
-    <div className="d-flex justify-content-center h-100">
-      <div className="card">
+    <div className="d-flex justify-content-center h-100 bg-dark">
+      <div className="card ">
         <div className="card-header">
           <h3>Log In</h3>
           <div className="d-flex justify-content-end social_icon">
@@ -103,9 +103,7 @@ function LoginForm(props) {
                   Sign Up
                 </button>
               </div>
-              <div className="d-flex justify-content-center">
-                <a href="www.google.com">Forgot your password?</a>
-              </div>
+            
             </div>
           </div>
         </div>
