@@ -35,7 +35,6 @@ function HomePage() {
     async function addToCart(e){
             console.debug(e.target.value)
             var product = await getProductByIdService(e.target.value)
-            console.log(product) 
              await addProductToCart(product)
             //await deleteProductFromCart(e.target.value)
             refreshPage();

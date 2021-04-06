@@ -16,7 +16,7 @@ function UserOrdersContainer(props) {
         {
             getOrders(props.id).then((json)=>{
 
-                console.log(json);
+             
                  setOrders(json);
                 
             });
@@ -31,8 +31,6 @@ function UserOrdersContainer(props) {
     async function deleteOrder(item)
     {
         const resp=await deleteUserOrder({UserId:item.UserId,OrderId:item.OrderId});
-        console.log(resp);
-        console.log("deleted");
         refreshPage();
     }
     

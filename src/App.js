@@ -27,7 +27,7 @@ function App() {
           <Route path="/viewCart" exact component={ViewCart}></Route>
 
           {/* Route to admin module.. use url localhost:3000/admin_page to view admin module */}
-          <Route path="/admin_page" exact component={AdminMain}></Route>
+          <Route path="/admin_page" exact component={withAuth(AdminMain)}></Route>
         </Switch>
       </Router>
     </div>

@@ -29,7 +29,7 @@ function FormContainer() {
 
      //if the user is inserted correctly in the collections
      if (res.auth && resp) {
-      console.log("success user token is"+res.token);
+ 
       localStorage.setItem('token', res.token);
       localStorage.setItem('sessionId',newUser.UserId);
       history.push("/home_page");
@@ -43,8 +43,6 @@ function FormContainer() {
 
     setNewRender(res);
 
-    console.log(render);
-
   }
 
   async function submit(e) {
@@ -55,8 +53,6 @@ function FormContainer() {
 
     //check if we passed the authenitcation of data with our database.
     if (resp.auth) {
-      console.log("success");
-      console.log(resp.token);
       localStorage.setItem('token', resp.token);
       localStorage.setItem('sessionId',newUser.UserId);
 

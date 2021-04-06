@@ -58,7 +58,7 @@ function ProductList(props) {
     }
 
     async function editProduct(e) {
-        console.log("inside update product")
+       
         let updatedProduct = newProduct;
         await updateProductService(updatedProduct);
         setAction("add")
@@ -76,7 +76,7 @@ function ProductList(props) {
         let productToUpdate = {};
         productList.forEach((product) => {
             if (product.ProductId === e.target.value)   {
-                console.log(product)
+               
                 productToUpdate = product;
         }})
         setNewProduct(productToUpdate)
@@ -89,7 +89,7 @@ function ProductList(props) {
             ...newProduct,
             [e.target.id]: e.target.value
         }) 
-        console.log(newProduct);
+      
     }
 
     function updateKeyword(e) {

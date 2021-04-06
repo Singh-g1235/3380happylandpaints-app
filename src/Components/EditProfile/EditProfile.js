@@ -20,7 +20,7 @@ function EditProfile(props) {
 
         setUser(json[0]);
         setNewUser(json[0]);
-        //console.log(json[0]);
+      
         
     });
   }
@@ -38,7 +38,7 @@ function EditProfile(props) {
     //prevent the default behaviour.
       e.preventDefault();
 
-      console.log(newUser);
+     
      const resp=await updateSignupUser(newUser);
        
      alert(resp.message);

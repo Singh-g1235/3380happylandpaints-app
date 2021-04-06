@@ -16,7 +16,7 @@ function ViewCart(props) {
         getCart()
             .then(res => {
                 setCart(res);
-                console.log(cart)
+
                 setLoading(false);
             })
             .catch(err => {
@@ -24,7 +24,6 @@ function ViewCart(props) {
                 setError(err);
             })
     }
-    console.log(cart)
 
     useEffect(() => {
         refreshPage();
@@ -34,7 +33,6 @@ function ViewCart(props) {
        
         
         await deleteProductService(e);
-        console.log("in delete")
         refreshPage();
     }
 
@@ -43,7 +41,7 @@ function ViewCart(props) {
     async function checkout(e) {
         await addProductToOrders(cart);
         await cartCheckout(e);
-        console.log("in checkout")
+
         refreshPage();
     }
 

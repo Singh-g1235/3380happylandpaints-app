@@ -54,7 +54,7 @@ function UserList(props) {
     }
 
     async function editUser(e) {
-        console.log("inside update user")
+        
         let updatedUser = newUser;
         await updateUserService(updatedUser);
         setAction("add")
@@ -72,7 +72,7 @@ function UserList(props) {
         let userToUpdate = {};
         userList.forEach((user) => {
             if (user.UserId === e.target.value)   {
-                console.log(user)
+              
                 userToUpdate = user;
         }})
         setNewUser(userToUpdate)
@@ -85,7 +85,7 @@ function UserList(props) {
             ...newUser,
             [e.target.id]: e.target.value
         }) 
-        console.log(newUser);
+      
     }
 
     function updateKeyword(e) {
