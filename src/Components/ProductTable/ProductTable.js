@@ -10,9 +10,9 @@ function ProductTable(props) {
              
              
              {
-                    (props.inventory).map((ele, i) =>
+                    (props.inventory).map((ele, key) =>
                  
-                    <ProductRecord viewCart={props.viewCart} addToCart={props.addToCart} 
+                    <ProductRecord key={key} viewCart={props.viewCart} addToCart={props.addToCart} 
                     productId={ele.ProductId} productAmount={ele.ProductAmount} productQuantity={ele.ProductQuantity} 
                     productDescription={ele.ProductDescription} productName={ele.ProductName}  />   
                     )
