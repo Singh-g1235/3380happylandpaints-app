@@ -18,44 +18,46 @@ function FormContainer() {
     });
   }
 
-  //when user click signup
   async function signup(e) {
     e.preventDefault();
    // console.log(newUser);
    setIsLoading(true);
-     const resp=await addSignupUser(newUser);
+     const res=await addSignupUser(newUser);
 
-     const res=await addLoginUser({UserId:newUser.UserId,Password:newUser.Password,Role:"customer"});
+     const resp=await addLoginUser({UserId:newUser.UserId,Password:newUser.Password,Role:"customer"});
 
-     //if the user is inserted correctly in the collections
-     if (res.auth && resp) {
- 
-      localStorage.setItem('token', res.token);
-      localStorage.setItem('sessionId',newUser.UserId);
+     if (resp) {
+      console.log("success");
       history.push("/home_page");
     } else {
       setIsLoading(false);
     }
 
+     if (res) {
+      console.log("success");
+      history.push("/home_page");
+    } else {
+      setIsLoading(false);
+    }
+
+   // console.log(res);
   }
 
   const action=(res)=>{
 
     setNewRender(res);
 
+    console.log(render);
+
   }
 
   async function submit(e) {
-    //when user clicks login button
     setIsLoading(true);
     //console.log(newUser);
     const resp = await getResponse(newUser);
 
-    //check if we passed the authenitcation of data with our database.
-    if (resp.auth) {
-      localStorage.setItem('token', resp.token);
-      localStorage.setItem('sessionId',newUser.UserId);
-
+    if (resp) {
+      console.log("success");
       if(newUser.Role ==="customer")
       {
         history.push("/home_page");
