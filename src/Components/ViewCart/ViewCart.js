@@ -52,7 +52,7 @@ function ViewCart(props) {
 
     return (
         <div>
-            <h1><strong>Welcome to Your Cart </strong> </h1>
+            <h1 id='viewCart'><strong>Welcome to Your Cart </strong> </h1>
             <br></br>
             <CartDisplay deleteProduct={deleteProduct} 
             checkout={checkout}
