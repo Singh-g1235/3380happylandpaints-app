@@ -21,31 +21,32 @@ function FormContainer() {
   //when user click signup
   async function signup(e) {
     e.preventDefault();
-   // console.log(newUser);
-   setIsLoading(true);
-     const resp=await addSignupUser(newUser);
+    // console.log(newUser);
+    setIsLoading(true);
+    const resp = await addSignupUser(newUser);
 
-     const res=await addLoginUser({UserId:newUser.UserId,Password:newUser.Password,Role:"customer"});
+    const res = await addLoginUser({
+      UserId: newUser.UserId,
+      Password: newUser.Password,
+      Role: "customer",
+    });
 
-     //if the user is inserted correctly in the collections
-     if (res.auth && resp) {
-      console.log("success user token is"+res.token);
-      localStorage.setItem('token', res.token);
-      localStorage.setItem('sessionId',newUser.UserId);
+    //if the user is inserted correctly in the collections
+    if (res.auth && resp) {
+      console.log("success user token is" + res.token);
+      localStorage.setItem("token", res.token);
+      localStorage.setItem("sessionId", newUser.UserId);
       history.push("/home_page");
     } else {
       setIsLoading(false);
     }
-
   }
 
-  const action=(res)=>{
-
+  const action = (res) => {
     setNewRender(res);
 
     console.log(render);
-
-  }
+  };
 
   async function submit(e) {
     //when user clicks login button
@@ -57,16 +58,13 @@ function FormContainer() {
     if (resp.auth) {
       console.log("success");
       console.log(resp.token);
-      localStorage.setItem('token', resp.token);
-      localStorage.setItem('sessionId',newUser.UserId);
+      localStorage.setItem("token", resp.token);
+      localStorage.setItem("sessionId", newUser.UserId);
 
-      if(newUser.Role ==="customer")
-      {
+      if (newUser.Role === "customer") {
         history.push("/home_page");
-      }
-      else{
+      } else {
         history.push("/admin_page");
-
       }
     } else {
       setIsLoading(false);
@@ -76,10 +74,16 @@ function FormContainer() {
   }
   return (
     <div>
-      {render === "Login"?(
-      <LoginForm update={updateUser} status={isLoading} submit={submit} render={action}/>):(
-      <SignupForm update={updateUser} submit={signup} />)
-      }
+      {render === "Login" ? (
+        <LoginForm
+          update={updateUser}
+          status={isLoading}
+          submit={submit}
+          render={action}
+        />
+      ) : (
+        <SignupForm update={updateUser} submit={signup} />
+      )}
     </div>
   );
 }

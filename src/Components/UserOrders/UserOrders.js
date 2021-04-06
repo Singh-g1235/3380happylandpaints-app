@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function UserOrders(props) {
-    return (
-        <div>
-            <table className="table table-hover">
+  return (
+    <div>
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>Product Name</th>
@@ -21,34 +21,18 @@ function UserOrders(props) {
               <td>{item.ProductQuantity}</td>
               <td>${item.ProductAmount}</td>
               <td>${item.OrderAmount}</td>
-              
-              <td>
-                <button
-                 disabled={true}
-                  className={
-                    
-                     "btn-warning btn"
-                  
-                  }
 
-                >
+              <td>
+                <button disabled={true} className={"btn-warning btn"}>
                   {item.OrderStatus}
                 </button>
               </td>
               <td>
                 <button
-
-                onClick={
-                    (e)=>{
-                        props.cancelOrder(item);
-                    }
-                }
-                  className={
-                    
-                     "btn-danger btn"
-                  
-                  }
-
+                  onClick={(e) => {
+                    props.cancelOrder(item);
+                  }}
+                  className={"btn-danger btn"}
                 >
                   Cancel Order
                 </button>
@@ -57,9 +41,8 @@ function UserOrders(props) {
           ))}
         </tbody>
       </table>
-
-        </div>
-    )
+    </div>
+  );
 }
 
-export default UserOrders
+export default UserOrders;
