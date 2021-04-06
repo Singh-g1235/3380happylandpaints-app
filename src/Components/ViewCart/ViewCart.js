@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import CartDisplay from '../CartDisplay/CartDisplay';
+import { useHistory } from "react-router-dom";
 import {getCart, deleteProductService,cartCheckout,addProductToOrders} from '../../Services/cartService'
 
 
@@ -7,6 +8,7 @@ function ViewCart(props) {
 
     const [cart, setCart] = useState([]);
     const [error, setError] = useState(null);
+    const history = useHistory();
 
     const [loading, setLoading] = useState(false);
 
@@ -44,6 +46,7 @@ function ViewCart(props) {
         await addProductToOrders({cart:cart,UserId:props.id});
         await cartCheckout(e);
         console.log("in checkout")
+        history.push('/home_page');
         refreshPage();
     }
 
