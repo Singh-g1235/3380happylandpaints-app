@@ -26,11 +26,11 @@ function ProductRecord(props) {
                             <h3>Price : ${props.productAmount}</h3>
                         </div>
                         <div class="col-2">
-
+                        
                             <button type="button" class="btn btn-warning" onClick={props.addToCart} value={props.productId}>Add to Cart</button>
-                        </div>
-                        <div class="col-2">
-                            <button type="button" class="btn btn-warning" onClick={props.viewCart} >View Cart</button>
+                            </div>
+                            <div class="col-2">
+                            <button type="button" class="btn btn-warning"onClick={props.viewCart} >View Cart</button>
                         </div>
                     </div>
 

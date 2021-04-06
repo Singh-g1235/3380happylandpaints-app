@@ -17,9 +17,9 @@ function UserOrders(props) {
         <tbody>
           {props.items.map((item, key) => (
             <tr key={key}>
-              <td>{item.ProductDetails[0].productName}</td>
-              <td>{item.ProductDetails[0].productQuantity}</td>
-              <td>${item.ProductDetails[0].productAmount}</td>
+              <td>{item.ProductName}</td>
+              <td>{item.ProductQuantity}</td>
+              <td>${item.ProductAmount}</td>
               <td>${item.OrderAmount}</td>
               
               <td>

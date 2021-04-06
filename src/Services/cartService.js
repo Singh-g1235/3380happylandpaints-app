@@ -70,10 +70,10 @@ export async function cartCheckout() {
 }
 
 
-export async function addProductToOrders(product) {
+export async function addProductToOrders(cart,userId) {
 
    
-    const newProduct = JSON.stringify(product);
+    const newProduct = JSON.stringify({cart,UserId:userId});
 
     console.log("in Json" + newProduct);
     return fetch(`${process.env.REACT_APP_API_BASE_URL}cart/orders`,{
