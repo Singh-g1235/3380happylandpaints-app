@@ -52,9 +52,8 @@ function HomePage() {
     if (error) return (<div className="alert alert-danger">There was an error loading...</div>)
 
     return (
-        <div>
+        <div id='home_page'>
        
-      
             <ProductTable addToCart={addToCart} viewCart={viewCart} inventory={inventory} />
         </div>
     )
