@@ -8,12 +8,15 @@ import withAuth from './Services/withAuth';
 import EditProfile from './Components/EditProfile/EditProfile';
 import ViewCart from './Components/ViewCart/ViewCart'
 import UserOrdersContainer from './Components/UserOrdersContainer/UserOrdersContainer';
+import Navbar from './Components/Navbar/Navbar';
+
 
 function App() {
   return (
     <div className="App">
 
       <Router>
+        <Navbar/>
         <Switch>
           {/* edit_profile and edit_orders will require user authentication. */}
         <Route path="/edit_profile" exact component={withAuth(EditProfile)}></Route>
