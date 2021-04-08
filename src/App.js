@@ -10,6 +10,7 @@ import ViewCart from './Components/ViewCart/ViewCart'
 import UserOrdersContainer from './Components/UserOrdersContainer/UserOrdersContainer';
 import Navbar from './Components/Navbar/Navbar';
 import LogoutForm from './Components/LoginForm/LogoutForm';
+import PageNotFound from './Components/PageNotFound/PageNotFound';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
 
           {/* Route to admin module.. use url localhost:3000/admin_page to view admin module */}
           <Route path="/admin_page" exact component={withAuth(AdminMain)}></Route>
+          <Route  exact component={PageNotFound}></Route>
         </Switch>
       </Router>
     </div>
