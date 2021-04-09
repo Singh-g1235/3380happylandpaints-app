@@ -11,7 +11,7 @@ function UserEdit(props) {
         <label  className="col-sm-3 col-form-label">User Id : </label>
         <div className="col-sm-3"><input className="form-control" type="text" id="UserId"  required onChange={update} value={currentUser.UserId}/></div>
         <label  className="col-sm-3 col-form-label">Password : </label>
-        <div className="col-sm-3"><input className="form-control" type="text" id="Password" disabled={true}  required onChange={update} value={currentUser.Password}/></div>
+        <div className="col-sm-3"><input className="form-control" type="password" id="Password" required onChange={update} /></div>
         </div><br/>
 
         <div className="form-group row">

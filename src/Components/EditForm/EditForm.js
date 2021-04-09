@@ -50,8 +50,8 @@ function EditForm(props) {
                 name="Password"
                 placeholder="Password"
                 onChange={props.update}
-                disabled={true}
-                defaultValue={props.currentUser.Password}
+              
+                defaultValue=""
                 required
               ></input>
             </div>
