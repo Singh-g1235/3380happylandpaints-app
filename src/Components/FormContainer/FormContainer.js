@@ -23,6 +23,7 @@ function FormContainer() {
     e.preventDefault();
     // console.log(newUser);
     setIsLoading(true);
+    
     const resp = await addSignupUser(newUser);
 
     const res = await addLoginUser({
@@ -52,6 +53,7 @@ function FormContainer() {
     //when user clicks login button
     setIsLoading(true);
     //console.log(newUser);
+
     const resp = await getResponse(newUser);
 
     //check if we passed the authenitcation of data with our database.
@@ -82,7 +84,7 @@ function FormContainer() {
           render={action}
         />
       ) : (
-        <SignupForm update={updateUser} submit={signup} />
+        <SignupForm update={updateUser}  submit={signup} />
       )}
     </div>
   );

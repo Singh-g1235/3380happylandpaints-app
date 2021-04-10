@@ -6,6 +6,7 @@ import EditForm from "../EditForm/EditForm";
 function EditProfile(props) {
   const [newUser, setNewUser] = useState();
   const [retrievedUser, setUser] = useState(null);
+  const [userIcon, setUserIcon] = useState([]);
 
   useEffect(() => {
     refreshPage();
@@ -17,6 +18,12 @@ function EditProfile(props) {
       setNewUser(json[0]);
       //console.log(json[0]);
     });
+
+    const url =
+      "https://ui-avatars.com/api/?name=" +
+      props.id +
+      "&background=random&length=1&size=170";
+    fetch(url).then((response) => setUserIcon(response));
   }
 
   function updateUser(e) {
@@ -42,6 +49,7 @@ function EditProfile(props) {
       update={updateUser}
       currentUser={retrievedUser}
       submit={editProfile}
+      icon={userIcon}
     />
   ) : (
     <div>

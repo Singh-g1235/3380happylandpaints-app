@@ -7,7 +7,7 @@ function ProductAdd(props) {
         <div className="col-sm-12 col-md-12 ">
 
         <h1>Add Product</h1>
-        <form  onSubmit={action}>
+        <form  onSubmit={action} action="#">
         <div className="form-group row">
         <label  className="col-sm-3 col-form-label">Product Id : </label>
         <div className="col-sm-3"><input className="form-control" type="text" id="ProductId" required onChange={update} /></div>
