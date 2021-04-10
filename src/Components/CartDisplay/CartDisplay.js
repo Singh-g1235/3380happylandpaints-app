@@ -51,8 +51,7 @@ function CartDisplay(props) {
             <button
               type="button"
               className="btn btn-warning fs-4 mt-4"
-              onClick={props.checkout}
-            >
+              onClick={props.checkout}>
               Checkout
             </button>
           </div>

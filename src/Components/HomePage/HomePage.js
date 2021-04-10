@@ -38,7 +38,7 @@ function HomePage() {
     var product = await getProductByIdService(e.target.value);
 
     await addProductToCart(product);
-    //await deleteProductFromCart(e.target.value)
+
     refreshPage();
   }
 
