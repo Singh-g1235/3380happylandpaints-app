@@ -19,6 +19,7 @@ function SignupForm(props) {
                 name="FirstName"
                 placeholder="First name"
                 onChange={props.update}
+                
                 required
               ></input>
             </div>

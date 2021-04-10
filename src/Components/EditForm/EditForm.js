@@ -10,8 +10,13 @@ function EditForm(props) {
             <div className="col-md-4 mb-3"></div>
           </div>
           <div className="form-row">
+            <div className="col-md-12 mb-3">
+              <img alt="img not avialable" src={props.icon.url} />
+            </div>
+          </div>
+          <div className="form-row">
             <div className="col-md-2 mb-3">
-              <label htmlFor="validationDefault01">First name</label>
+              <label htmlFor="validationDefault01">First name</label>{" "}
             </div>
             <div className="col-md-4 mb-3">
               <input
@@ -41,25 +46,22 @@ function EditForm(props) {
           </div>
           <div className="form-row">
             <div className="col-md-2 mb-3">
-              <label htmlFor="Password">Password</label>
-            </div>
-            <div className="col-md-4 mb-3">
               <input
-                type="password"
+                type="hidden"
                 className="form-control"
                 name="Password"
                 placeholder="Password"
                 onChange={props.update}
-              
                 defaultValue=""
                 required
               ></input>
             </div>
+
             <div className="col-md-2 mb-3">
               <label htmlFor="UserId">User Id</label>
             </div>
 
-            <div className="col-md-4 mb-3">
+            <div className="col-md-5 mb-3">
               <div className="input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text" name="U">
@@ -144,11 +146,6 @@ function EditForm(props) {
             UpdateProfile
           </button>
         </form>
-
-        <img
-          alt="img not avialable"
-          src="https://mir-s3-cdn-cf.behance.net/projects/404/ae3afc101182005.Y3JvcCw5NjAsNzUwLDAsMTA0.png"
-        />
       </div>
     </div>
   );
