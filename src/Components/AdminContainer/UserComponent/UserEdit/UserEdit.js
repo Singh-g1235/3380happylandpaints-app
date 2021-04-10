@@ -6,7 +6,7 @@ function UserEdit(props) {
     return (
         <div className="col-sm-12 col-md-12 ">
         <h1>Edit User</h1>
-        <form  onSubmit={action} action="#">
+        <form  onSubmit={action} >
         <div className="form-group row">
         <label  className="col-sm-3 col-form-label">User Id : </label>
         <div className="col-sm-3"><input className="form-control" type="text" id="UserId"  required onChange={update} value={currentUser.UserId}/></div>
