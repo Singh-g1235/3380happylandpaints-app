@@ -5,7 +5,7 @@ import {
   getCart,
   deleteProductService,
   cartCheckout,
-  addProductToOrders,
+  addProductToOrders,sendEmail
 } from "../../Services/cartService";
 
 function ViewCart(props) {
@@ -21,7 +21,6 @@ function ViewCart(props) {
     getCart()
       .then((res) => {
         setCart(res);
-        console.log(cart);
         setLoading(false);
       })
       .catch((err) => {
@@ -43,26 +42,24 @@ function ViewCart(props) {
   //checkout
 
   async function checkout(e) {
-    await addProductToOrders({ cart: cart, UserId: props.id });
+    await addProductToOrders({ cart: cart, UserId: props.id});
     await cartCheckout(e);
-
     history.push("/home_page");
+    await sendEmail({ cart: cart, UserId: props.id });
+  
     refreshPage();
   }
 
-  return (
-    <div>
-      <h1>
-        <strong>Welcome to Your Cart </strong>{" "}
-      </h1>
-      <br></br>
-      <CartDisplay
-        deleteProduct={deleteProduct}
-        checkout={checkout}
-        cart={cart}
-      />
-    </div>
-  );
+    return (
+        <div>
+            <h1 id='viewCart'><strong>Welcome to Your Cart </strong> </h1>
+            <br></br>
+            <CartDisplay deleteProduct={deleteProduct} 
+            checkout={checkout}
+            cart={cart}/>
+            
+        </div>
+    )
 }
 
 export default ViewCart;

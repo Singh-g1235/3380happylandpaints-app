@@ -6,10 +6,10 @@ function ProductRecord(props) {
     height: 150,
   };
   return (
-    <div class="accordion-item">
-      <h2 class="accordion-header " id="headingOne">
+    <div className="accordion-item">
+      <h2 className="accordion-header " id="headingOne">
         <button
-          class="accordion-button"
+          className="accordion-button"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapseOne"
@@ -20,21 +20,21 @@ function ProductRecord(props) {
             className=""
             style={styleImg}
             src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=30"
-            class="card-img-top"
+            className="card-img-top"
             alt="..."
           />
-          <p class="fs-5 ms-3 text-success">{props.productName}</p>
+          <p className="fs-5 ms-3 text-success">{props.productName}</p>
         </button>
       </h2>
       <div
         id={props.productId}
-        class="accordion-collapse collapse show"
+        className="accordion-collapse collapse show"
         aria-labelledby="headingOne"
         data-bs-parent="#accordionExample"
       >
-        <div class="accordion-body">
-          <div class="row">
-            <div class="col-8">
+        <div className="accordion-body">
+          <div className="row">
+            <div className="col-8">
               <p>
                 The product is available in{" "}
                 <strong>{props.productDescription.availableColours}</strong>.
@@ -51,20 +51,20 @@ function ProductRecord(props) {
               </p>
               <h3>Price : ${props.productAmount}</h3>
             </div>
-            <div class="col-2">
+            <div className="col-2">
               <button
                 type="button"
-                class="btn btn-warning"
+                className="btn btn-warning"
                 onClick={props.addToCart}
                 value={props.productId}
               >
                 Add to Cart
               </button>
             </div>
-            <div class="col-2">
+            <div className="col-2">
               <button
                 type="button"
-                class="btn btn-warning"
+                className="btn btn-warning"
                 onClick={props.viewCart}
               >
                 View Cart

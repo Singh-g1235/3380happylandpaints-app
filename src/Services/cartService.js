@@ -77,3 +77,17 @@ export async function addProductToOrders(cart, userId) {
     body: newProduct,
   }).then((res) => res.json());
 }
+
+
+//sending cart summary to customer via email address
+
+export async function sendEmail(cart,userId) {
+  let requestData = JSON.stringify({cart, UserId: userId});
+  console.log(requestData);
+  return fetch(`${process.env.REACT_APP_API_BASE_URL}cart/email`,{
+      method: 'POST',
+      headers: {"Content-Type":"application/json"},
+      body: requestData
+  })
+  .then(response => response.json())
+}

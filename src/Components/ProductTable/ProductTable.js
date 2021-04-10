@@ -2,7 +2,7 @@ import React from "react";
 import ProductRecord from "../ProductRecord/ProductRecord";
 function ProductTable(props) {
   return (
-    <div class="accordion" id="accordionExample">
+    <div className="accordion" id="accordionExample">
       {props.inventory.map((ele, key) => (
         <ProductRecord
           key={key}
