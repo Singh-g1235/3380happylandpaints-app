@@ -6,7 +6,7 @@ import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
 
-// Reference:https://youtu.be/CXa0f4-dWi4;
+
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
