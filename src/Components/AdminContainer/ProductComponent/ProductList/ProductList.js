@@ -52,12 +52,13 @@ function ProductList(props) {
     }
 
     async function addProduct(e)  {
-            
+            e.preventDefault();
             await addProductService(newProduct);
             refreshProducts();
     }
 
     async function editProduct(e) {
+        e.preventDefault();
         console.log("inside update product")
         let updatedProduct = newProduct;
         await updateProductService(updatedProduct);

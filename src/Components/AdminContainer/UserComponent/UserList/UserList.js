@@ -48,12 +48,13 @@ function UserList(props) {
     }
 
     async function addUser(e)  {
-            
+        e.preventDefault();
             await addUserService(newUser);
             refreshUsers();
     }
 
     async function editUser(e) {
+        e.preventDefault();
         console.log("inside update user")
         let updatedUser = newUser;
         await updateUserService(updatedUser);
